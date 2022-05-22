@@ -11,6 +11,7 @@
       <img :src="post.blogCoverPhoto" alt="">
       <div class="info">
           <h4>{{post.blogTitle}}</h4>
+          <h6>Author : {{post.blogAuthor}} </h6>
           <h6>Posted on: {{post.blogDate}}</h6>
           <p class="content-preview">{{post.blogHTML}}</p>
           <router-link class="link" :to="{name: 'ViewBlog', params: {blogId: this.post.blogId} }">View the post
@@ -135,9 +136,12 @@ export default {
         }
 
         h6{
-            padding-bottom: 16px;
             font-size: 12px;
             font-weight: 400;
+        }
+        
+        p{
+            margin-top: 16px;
         }
 
         .link {

@@ -93,7 +93,7 @@ export default {
                         blogCoverPhoto: this.$store.state.blogPhotoFileURL,
                         blogCoverPhotoName: this.blogCoverPhotoName,
                         blogTitle: this.blogTitle,
-                        profileId:this.profileId,
+                        blogAuthor:this.profileId,
                         blogDate: today
                     };
                     this.$store.commit("increaseRunningBlogId");
