@@ -16,11 +16,17 @@ export default {
             console.log(this.$route.params.word);
             console.log(this.$store.state.favoriteBlogWords);
             var blogIds = this.$store.state.favoriteBlogWords.get(this.$route.params.word);
+            var sampleblogcards =[];
+            var userBlogCards = [];
 
-            var blogcards = this.$store.state.sampleBlogCards.filter((post) => {
+            sampleblogcards = this.$store.state.sampleBlogCards.filter((post) => {
                 return blogIds.includes(post.blogId);
             });
-            return blogcards;
+            userBlogCards = this.$store.state.userBlogCards.filter((post) => {
+                return blogIds.includes(post.blogId);
+            });
+
+            return sampleblogcards.concat(userBlogCards);
         }
     }
 }
