@@ -48,21 +48,6 @@ export default {
 			const selection = window.getSelection()
 			const selectionRange = selection.getRangeAt(0)
 
-			// startNode is the element that the selection starts in
-			const startNode = selectionRange.startContainer.parentNode
-			// endNode is the element that the selection ends in
-			const endNode = selectionRange.endContainer.parentNode
-
-			// if the selected text is not part of the highlightableEl (i.e. <p>)
-			// OR
-			// if startNode !== endNode (i.e. the user selected multiple paragraphs)
-			// Then
-			// Don't show the menu (this selection is invalid)
-			if (!startNode.isSameNode(this.highlightableEl) || !startNode.isSameNode(endNode)) {
-				this.showMenu = false
-				return
-			}
-
 			// Get the x, y, and width of the selection
 			const { x, y, width } = selectionRange.getBoundingClientRect()
 
